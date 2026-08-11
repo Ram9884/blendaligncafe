@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+@theme {
+  --color-espresso: #24150F;
+  --color-cream: #FFF8EE;
+  --color-caramel: #C47A44;
+  --color-orange: #E9A15B;
+  --color-dark: #1C1714;
+  --color-cream-muted: #F5EDD8;
+  --color-espresso-light: #3d2518;
+
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --radius-card: 16px;
+  --radius-pill: 9999px;
+
+  --shadow-card: 0 4px 24px rgba(36, 21, 15, 0.08);
+  --shadow-card-hover: 0 12px 40px rgba(36, 21, 15, 0.18);
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-dark);
+    font-family: var(--font-body);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-espresso);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .text-espresso { color: var(--color-espresso); }
+  .text-cream { color: var(--color-cream); }
+  .text-caramel { color: var(--color-caramel); }
+  .text-soft-orange { color: var(--color-orange); }
+  .bg-espresso { background-color: var(--color-espresso); }
+  .bg-cream { background-color: var(--color-cream); }
+  .bg-caramel { background-color: var(--color-caramel); }
+  .bg-cream-muted { background-color: var(--color-cream-muted); }
+
+  .section-pad {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-pad {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  .container-site {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-site {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .card-base {
+    background: white;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .card-base:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-4px);
+  }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-caramel);
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-caramel);
+    color: var(--color-cream);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-orange);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(196, 122, 68, 0.35);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--color-cream);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    border: 1.5px solid rgba(255, 248, 238, 0.4);
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 248, 238, 0.1);
+    border-color: rgba(255, 248, 238, 0.7);
+  }
+
+  .price-tag {
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--color-caramel);
+    font-size: 1rem;
+  }
+}
