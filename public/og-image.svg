@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img"
+  aria-label="Blend Align Cafe Open Graph image">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#24150F" />
+      <stop offset="100%" stop-color="#3F291B" />
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E9A15B" />
+      <stop offset="100%" stop-color="#F3D6B2" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="280" cy="315" r="180" fill="rgba(255,255,255,0.06)" />
+  <circle cx="780" cy="320" r="220" fill="rgba(255,255,255,0.08)" />
+  <rect x="120" y="300" width="240" height="140" rx="30" fill="#F9E7D3" />
+  <path d="M120 300c0-28 22-50 50-50h90c28 0 50 22 50 50v20H120v-20Z" fill="#24150F" />
+  <path d="M330 280c10-18 28-30 48-30s38 12 48 30" stroke="#F9E7D3" stroke-width="16"
+    stroke-linecap="round" fill="none" />
+  <path
+    d="M690 180c0-20 14-36 32-36s32 16 32 36c0 20-14 36-32 36s-32-16-32-36ZM740 160c0-12 8-22 20-22s20 10 20 22"
+    stroke="#F9E7D3" stroke-width="14" stroke-linecap="round" fill="none" />
+  <text x="120" y="470" fill="#F9E7D3" font-family="Inter, sans-serif" font-size="84"
+    font-weight="700">Blend Align Cafe</text>
+  <text x="120" y="560" fill="#F9E7D3" font-family="Inter, sans-serif" font-size="42" opacity="0.88">Cold
+    coffee, momos, mojitos & more in Tiruvottiyur</text>
+  <rect x="120" y="98" width="220" height="100" rx="22" fill="rgba(255,255,255,0.12)" />
+  <text x="140" y="160" fill="#F9E7D3" font-family="Inter, sans-serif" font-size="42"
+    font-weight="700">Local favourites</text>
+</svg>

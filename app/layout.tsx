@@ -18,23 +18,35 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Blend Align Cafe | Coffee, Momos & More — Tiruvottiyur, Chennai",
+  title: "Blend Align Cafe | Crave-worthy coffee, momos & more in Tiruvottiyur",
   description:
-    "Blend Align Cafe in Tiruvottiyur, Chennai serves premium cold coffee, mojitos, steamed momos, pasta, milkshakes and more. Dine-in, takeaway, and delivery available.",
+    "Blend Align Cafe in Tiruvottiyur, Chennai serves cold coffee, mojitos, steamed momos, pasta, milkshakes and more with dine-in, takeaway and delivery.",
   keywords: [
-    "cafe tiruvottiyur",
-    "blend align cafe",
-    "cold coffee chennai",
-    "momos tiruvottiyur",
-    "milkshake cafe chennai",
-    "pasta cafe tiruvottiyur",
+    "Blend Align Cafe",
+    "cafe Tiruvottiyur",
+    "cold coffee Chennai",
+    "momos Chennai",
+    "milkshakes Chennai",
+    "pasta Tiruvottiyur",
+  ],
+  icons: [
+    { rel: "icon", url: "/favicon.svg" },
+    { rel: "apple-touch-icon", url: "/favicon.svg" },
   ],
   openGraph: {
-    title: "Blend Align Cafe — Where Cravings Meet Their Match",
+    title: "Blend Align Cafe — Crave-worthy cafe in Tiruvottiyur, Chennai",
     description:
-      "Premium cafe in Tiruvottiyur, Chennai. Coffee, momos, mojitos, pasta & more.",
+      "Premium neighbourhood cafe serving coffee, mojitos, momos, pasta and desserts in Tiruvottiyur with dine-in, takeaway and delivery.",
     type: "website",
     locale: "en_IN",
+    images: ["/og-image.svg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blend Align Cafe | Crave-worthy coffee, momos & more in Tiruvottiyur",
+    description:
+      "Premium neighbourhood cafe serving coffee, mojitos, momos, pasta and desserts in Tiruvottiyur with dine-in, takeaway and delivery.",
+    images: ["/og-image.svg"],
   },
 };
 
