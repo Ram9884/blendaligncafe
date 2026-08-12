@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { animate } from "animejs";
 import { MENU_ITEMS, CATEGORY_FILTER_ITEMS, formatPrice, type MenuCategory } from "@/data/menu";
 
 const EMOJI_MAP: Record<string, string> = {
@@ -26,17 +27,14 @@ export default function CategoryFilter() {
     setActive(cat);
 
     if (!prefersReduced) {
-      // anime.js pill morph effect
-      import("animejs").then(({ default: anime }) => {
-        const btn = pillRefs.current[idx];
-        if (!btn) return;
-        anime({
-          targets: btn,
+      const btn = pillRefs.current[idx];
+      if (btn) {
+        animate(btn, {
           scale: [1, 1.08, 1],
           duration: 400,
-          easing: "easeOutElastic(1, 0.5)",
+          ease: "outElastic(1, 0.5)",
         });
-      });
+      }
     }
   };
 

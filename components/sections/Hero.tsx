@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { createTimeline } from "animejs";
 import { BUSINESS } from "@/data/business";
 
 export default function Hero() {
@@ -23,46 +24,43 @@ export default function Hero() {
       return;
     }
 
-    // anime.js dynamic import
-    import("animejs").then(({ default: anime }) => {
-      const tl = anime.timeline({ easing: "easeOutExpo" });
+    const tl = createTimeline({ defaults: { ease: "outExpo" } });
 
-      tl.add({
-        targets: eyebrowRef.current,
+    if (eyebrowRef.current) {
+      tl.add(eyebrowRef.current, {
         opacity: [0, 1],
         translateY: [20, 0],
         duration: 600,
-        delay: 200,
-      })
-        .add({
-          targets: headlineRef.current,
-          opacity: [0, 1],
-          translateY: [40, 0],
-          duration: 900,
-          delay: 100,
-        })
-        .add({
-          targets: subRef.current,
-          opacity: [0, 1],
-          translateY: [20, 0],
-          duration: 700,
-          delay: 0,
-        })
-        .add({
-          targets: ctaRef.current,
-          opacity: [0, 1],
-          translateY: [20, 0],
-          duration: 600,
-          delay: 0,
-        })
-        .add({
-          targets: locationRef.current,
-          opacity: [0, 1],
-          translateY: [10, 0],
-          duration: 500,
-          delay: 0,
-        });
-    });
+      }, 200);
+    }
+    if (headlineRef.current) {
+      tl.add(headlineRef.current, {
+        opacity: [0, 1],
+        translateY: [40, 0],
+        duration: 900,
+      }, 700);
+    }
+    if (subRef.current) {
+      tl.add(subRef.current, {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 700,
+      }, 1500);
+    }
+    if (ctaRef.current) {
+      tl.add(ctaRef.current, {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 600,
+      }, 2100);
+    }
+    if (locationRef.current) {
+      tl.add(locationRef.current, {
+        opacity: [0, 1],
+        translateY: [10, 0],
+        duration: 500,
+      }, 2600);
+    }
   }, []);
 
   return (
