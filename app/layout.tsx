@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
-import DemoBanner from "@/components/DemoBanner";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -19,34 +18,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Premium Cafe Website Template & Demo",
+  title: "Blend Align Cafe | Coffee, Momos & More — Tiruvottiyur, Chennai",
   description:
-    "A customizable premium website template for modern cafes and restaurants. Features high-fidelity design system, interactive menu, and clean layout.",
+    "Blend Align Cafe in Tiruvottiyur, Chennai serves premium cold coffee, mojitos, steamed momos, pasta, milkshakes and more. Dine-in, takeaway, and delivery available.",
   keywords: [
-    "cafe template",
-    "restaurant website",
-    "cafe website demo",
-    "premium cafe layout",
-    "nextjs cafe template",
-  ],
-  icons: [
-    { rel: "icon", url: "/favicon.svg" },
-    { rel: "apple-touch-icon", url: "/favicon.svg" },
+    "cafe tiruvottiyur",
+    "blend align cafe",
+    "cold coffee chennai",
+    "momos tiruvottiyur",
+    "milkshake cafe chennai",
+    "pasta cafe tiruvottiyur",
   ],
   openGraph: {
-    title: "Premium Cafe Website Template & Demo",
+    title: "Blend Align Cafe — Where Cravings Meet Their Match",
     description:
-      "A customizable premium website template for modern cafes and restaurants. Features high-fidelity design system, interactive menu, and clean layout.",
+      "Premium cafe in Tiruvottiyur, Chennai. Coffee, momos, mojitos, pasta & more.",
     type: "website",
-    locale: "en_US",
-    images: ["/og-image.svg"],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Premium Cafe Website Template & Demo",
-    description:
-      "A customizable premium website template for modern cafes and restaurants. Features high-fidelity design system, interactive menu, and clean layout.",
-    images: ["/og-image.svg"],
+    locale: "en_IN",
   },
 };
 
@@ -56,9 +44,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="bg-cream text-dark font-body antialiased">
-        <DemoBanner />
         <Navbar />
         <main>{children}</main>
         <Footer />
