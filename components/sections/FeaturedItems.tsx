@@ -51,7 +51,7 @@ export default function FeaturedItems() {
           <div>
             <p className="eyebrow mb-3">Fan Favourites</p>
             <h2 className="font-heading text-3xl md:text-5xl text-espresso">
-              Best of Blend Align
+              Our Best Sellers
             </h2>
           </div>
           <Link

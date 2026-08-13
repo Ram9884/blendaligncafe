@@ -4,9 +4,9 @@ import { BUSINESS } from "@/data/business";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About | Blend Align Cafe — Tiruvottiyur, Chennai",
+  title: `About | ${BUSINESS.name} — Cafe Template`,
   description:
-    "Learn about Blend Align Cafe — your neighbourhood cafe in Tiruvottiyur, Chennai serving coffee, momos, mojitos, pasta and more.",
+    `Learn about ${BUSINESS.name} — your neighbourhood cafe template serving coffee, drinks, snacks and more.`,
 };
 
 export default function AboutPage() {
@@ -20,10 +20,10 @@ export default function AboutPage() {
         <div className="container-site text-center">
           <p className="eyebrow mb-4" style={{ color: "#E9A15B" }}>Our Story</p>
           <h1 className="font-heading text-4xl md:text-6xl text-cream mb-4">
-            About Blend Align
+            About {BUSINESS.name}
           </h1>
           <p className="text-cream/50 text-lg max-w-lg mx-auto">
-            A neighbourhood cafe built for real everyday cravings.
+            A neighbourhood cafe template built for real everyday cravings.
           </p>
         </div>
       </div>
@@ -36,24 +36,24 @@ export default function AboutPage() {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
                 src="/cafe-story.png"
-                alt="Blend Align Cafe interior"
+                alt={`${BUSINESS.name} interior`}
                 fill
                 className="object-cover"
               />
             </div>
             <div>
               <h2 className="font-heading text-2xl md:text-3xl text-espresso mb-5">
-                Your go-to spot in Tiruvottiyur
+                Your go-to spot in {BUSINESS.address.city}
               </h2>
               <p className="text-dark/60 leading-relaxed mb-5">
-                Blend Align Cafe is your neighbourhood cafe in the heart of Tiruvottiyur, Chennai. 
-                We serve a curated menu of cold coffees, mojitos, steamed momos, pasta, milkshakes, 
-                and more — all made to satisfy your cravings without burning a hole in your pocket.
+                {BUSINESS.name} is a template preview of a neighborhood cafe in the heart of {BUSINESS.address.city}. 
+                We showcase a curated menu of cold coffees, fresh beverages, delicious snacks, 
+                and desserts — all designed to satisfy your cravings and look incredibly premium online.
               </p>
               <p className="text-dark/60 leading-relaxed">
-                Whether you're stopping by for a quick bite or settling in for a relaxed afternoon, 
-                Blend Align has a seat and a dish for you. Dine-in, takeaway, or delivery — 
-                we've got you covered.
+                Whether clients stop by for a quick look or want to explore our layout, 
+                this template adapts beautifully to any cafe brand. Dine-in, takeaway, or delivery — 
+                we have options to highlight all of your service modes.
               </p>
             </div>
           </div>
@@ -62,9 +62,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {[
               { icon: "⭐", value: `${BUSINESS.rating.score}`, label: "Google Rating" },
-              { icon: "₹", value: "1–200", label: "Approx. per person" },
-              { icon: "🍽️", value: "3", label: "Ways to eat (dine/take/deliver)" },
-              { icon: "📍", value: "Tiruvottiyur", label: "Chennai" },
+              { icon: "₹", value: "100–300", label: "Approx. per person" },
+              { icon: "🍽️", value: "3", label: "Service options" },
+              { icon: "📍", value: `${BUSINESS.address.area}`, label: `${BUSINESS.address.city}` },
             ].map((stat) => (
               <div
                 key={stat.label}

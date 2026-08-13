@@ -74,7 +74,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/hero-cafe.png"
-          alt="Blend Align Cafe interior"
+          alt={`${BUSINESS.name} interior`}
           fill
           priority
           className="object-cover"
@@ -131,7 +131,7 @@ export default function Hero() {
             className="eyebrow mb-5"
             style={{ opacity: 0, color: "#E9A15B" }}
           >
-            BLEND ALIGN
+            {BUSINESS.name}
           </div>
 
           <h1
@@ -152,8 +152,7 @@ export default function Hero() {
             className="text-cream/80 text-lg md:text-xl mb-8 leading-relaxed max-w-lg"
             style={{ opacity: 0 }}
           >
-            Coffee, coolers, momos, pasta & more —<br className="hidden md:block" />
-            made for your everyday cravings.
+            {BUSINESS.shortTagline}
           </p>
 
           <div

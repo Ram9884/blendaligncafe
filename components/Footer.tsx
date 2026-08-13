@@ -20,12 +20,14 @@ export default function Footer() {
                 className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
                 style={{ background: "linear-gradient(135deg, #C47A44, #E9A15B)" }}
               >
-                <span className="text-white text-sm font-bold font-heading">B</span>
+                <span className="text-white text-sm font-bold font-heading">
+                  {BUSINESS.name.charAt(0)}
+                </span>
               </div>
-              <span className="font-heading font-bold text-lg text-cream">Blend Align Cafe</span>
+              <span className="font-heading font-bold text-lg text-cream">{BUSINESS.name}</span>
             </div>
             <p className="text-sm leading-relaxed text-cream/60 max-w-xs">
-              Where cravings meet their match. Coffee, coolers, momos, pasta & more — in the heart of Tiruvottiyur.
+              {BUSINESS.tagline} {BUSINESS.shortTagline}
             </p>
           </div>
 
@@ -86,7 +88,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-cream/40">
-            © {new Date().getFullYear()} Blend Align Cafe. All rights reserved.
+            © {new Date().getFullYear()} {BUSINESS.name}. All rights reserved.
           </p>
           <p className="text-xs text-cream/40">
             ⭐ {BUSINESS.rating.score} on Google · {BUSINESS.address.area}

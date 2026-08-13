@@ -3,13 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { BUSINESS } from "@/data/business";
 
 export default function StorySection() {
   return (
     <section
       className="section-pad overflow-hidden"
       style={{ background: "#24150F" }}
-      aria-label="About Blend Align Cafe"
+      aria-label={`About ${BUSINESS.name}`}
       id="story"
     >
       <div className="container-site">
@@ -24,7 +25,7 @@ export default function StorySection() {
           >
             <Image
               src="/cafe-story.png"
-              alt="Cozy corner at Blend Align Cafe"
+              alt={`Cozy corner at ${BUSINESS.name}`}
               fill
               className="object-cover"
             />
@@ -47,9 +48,9 @@ export default function StorySection() {
               transition={{ delay: 0.4, duration: 0.6 }}
             >
               <p className="text-cream font-heading text-xl font-bold leading-tight">
-                ₹1–200
+                {BUSINESS.pricing.display}
               </p>
-              <p className="text-cream/60 text-xs mt-0.5">Approx. per person</p>
+              <p className="text-cream/60 text-xs mt-0.5">{BUSINESS.pricing.label}</p>
             </motion.div>
           </motion.div>
 
@@ -69,7 +70,7 @@ export default function StorySection() {
               <em style={{ color: "#E9A15B" }}>Leave happy.</em>
             </h2>
             <p className="text-cream/60 text-lg leading-relaxed mb-8">
-              More than just coffee — Blend Align Cafe is your neighbourhood spot for everything crave-worthy. 
+              More than just coffee — {BUSINESS.name} is your neighbourhood spot for everything crave-worthy. 
               From chilled mojitos to steaming momos, from cold coffee to molten lava cakes, 
               there's always something for your mood.
             </p>
@@ -78,7 +79,7 @@ export default function StorySection() {
               {[
                 { icon: "🍽️", label: "Dine-in available", sub: "Pull up a chair and stay a while" },
                 { icon: "📦", label: "Takeaway & Delivery", sub: "Get your cravings delivered" },
-                { icon: "📍", label: "Tiruvottiyur, Chennai", sub: "43, West Madam Street, Theradi" },
+                { icon: "📍", label: `${BUSINESS.address.area}, ${BUSINESS.address.city}`, sub: BUSINESS.address.street },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
                   <span className="text-2xl flex-shrink-0 mt-0.5">{item.icon}</span>

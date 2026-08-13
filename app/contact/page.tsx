@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { BUSINESS } from "@/data/business";
 
 export const metadata: Metadata = {
-  title: "Contact | Blend Align Cafe — Tiruvottiyur, Chennai",
+  title: `Contact | ${BUSINESS.name} — Cafe Template`,
   description:
-    "Visit Blend Align Cafe at 43, West Madam Street, Theradi, Tiruvottiyur, Chennai. Call 070949 85603 or get directions.",
+    `Visit ${BUSINESS.name} at ${BUSINESS.address.full}. Call ${BUSINESS.phone.display} or get directions.`,
 };
 
 export default function ContactPage() {
@@ -64,7 +64,7 @@ export default function ContactPage() {
                     className="rounded-2xl px-6 py-4 text-center"
                     style={{ background: "rgba(255,248,238,0.95)", boxShadow: "0 4px 24px rgba(36,21,15,0.15)" }}
                   >
-                    <p className="font-heading font-bold text-espresso">Blend Align Cafe</p>
+                    <p className="font-heading font-bold text-espresso">{BUSINESS.name}</p>
                     <p className="text-dark/50 text-xs mt-1">{BUSINESS.address.short}</p>
                   </div>
                   <a

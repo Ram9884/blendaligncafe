@@ -82,8 +82,8 @@ export default function LocationSection() {
                     boxShadow: "0 4px 24px rgba(36,21,15,0.15)",
                   }}
                 >
-                  <p className="font-heading font-bold text-espresso text-sm">Blend Align Cafe</p>
-                  <p className="text-dark/50 text-xs mt-1">Theradi, Tiruvottiyur</p>
+                  <p className="font-heading font-bold text-espresso text-sm">{BUSINESS.name}</p>
+                  <p className="text-dark/50 text-xs mt-1">{BUSINESS.address.short}</p>
                 </div>
               </div>
             </div>

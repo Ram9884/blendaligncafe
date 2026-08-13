@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { BUSINESS } from "@/data/business";
+import DemoBanner from "@/components/DemoBanner";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -44,23 +45,26 @@ export default function Navbar() {
           boxShadow: scrolled ? "0 1px 0 rgba(36,21,15,0.08)" : "none",
         }}
       >
+        <DemoBanner />
         <div className="container-site flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group" aria-label="Blend Align Cafe Home">
+          <Link href="/" className="flex items-center gap-2.5 group" aria-label={`${BUSINESS.name} Home`}>
             <motion.div
               className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
               style={{ background: "linear-gradient(135deg, #C47A44, #E9A15B)" }}
               whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
-              <span className="text-white text-sm font-bold font-heading">B</span>
+              <span className="text-white text-sm font-bold font-heading">
+                {BUSINESS.name.charAt(0)}
+              </span>
             </motion.div>
             <span
               ref={logoRef}
               className="font-heading font-bold text-lg leading-tight"
               style={{ color: scrolled ? "#24150F" : "#FFF8EE" }}
             >
-              Blend Align
+              {BUSINESS.name}
             </span>
           </Link>
 
@@ -118,7 +122,7 @@ export default function Navbar() {
           >
             {/* Close button */}
             <div className="flex items-center justify-between p-6">
-              <span className="font-heading font-bold text-xl text-cream">Blend Align</span>
+              <span className="font-heading font-bold text-xl text-cream">{BUSINESS.name}</span>
               <button
                 onClick={() => setMobileOpen(false)}
                 className="text-cream p-2"
