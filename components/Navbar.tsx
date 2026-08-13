@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { BUSINESS } from "@/data/business";
-import DemoBanner from "@/components/DemoBanner";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -45,7 +44,6 @@ export default function Navbar() {
           boxShadow: scrolled ? "0 1px 0 rgba(36,21,15,0.08)" : "none",
         }}
       >
-        <DemoBanner />
         <div className="container-site flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group" aria-label={`${BUSINESS.name} Home`}>
