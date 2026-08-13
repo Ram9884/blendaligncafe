@@ -3,27 +3,21 @@
 import { useState, useEffect } from "react";
 
 export default function DemoBanner() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isExpanded, setIsExpanded] = useState(true);
 
   useEffect(() => {
-    const dismissed = localStorage.getItem("demo-banner-dismissed");
-    if (!dismissed) {
-      setIsVisible(true);
-      
-      // Auto-collapse after 4 seconds
-      const timer = setTimeout(() => {
-        setIsExpanded(false);
-      }, 4000);
-      
-      return () => clearTimeout(timer);
-    }
+    // Auto-collapse after 4 seconds
+    const timer = setTimeout(() => {
+      setIsExpanded(false);
+    }, 4000);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   const handleClose = (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsVisible(false);
-    localStorage.setItem("demo-banner-dismissed", "true");
   };
 
   if (!isVisible) return null;
