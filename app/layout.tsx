@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
+import { BUSINESS } from "@/data/business";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -18,21 +19,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Blend Align Cafe | Coffee, Momos & More — Tiruvottiyur, Chennai",
+  title: `${BUSINESS.name} | Coffee, Drinks & Snacks — ${BUSINESS.address.short}`,
   description:
-    "Blend Align Cafe in Tiruvottiyur, Chennai serves premium cold coffee, mojitos, steamed momos, pasta, milkshakes and more. Dine-in, takeaway, and delivery available.",
+    `${BUSINESS.name} in ${BUSINESS.address.city} serves premium cold coffee, mojitos, steamed momos, pasta, milkshakes and more. Dine-in, takeaway, and delivery available.`,
   keywords: [
-    "cafe tiruvottiyur",
-    "blend align cafe",
-    "cold coffee chennai",
-    "momos tiruvottiyur",
-    "milkshake cafe chennai",
-    "pasta cafe tiruvottiyur",
+    "cafe",
+    "cold coffee",
+    "milkshakes",
+    "momos",
+    "pasta",
+    "drinks",
+    "snacks",
   ],
   openGraph: {
-    title: "Blend Align Cafe — Where Cravings Meet Their Match",
+    title: `${BUSINESS.name} — Where Cravings Meet Their Match`,
     description:
-      "Premium cafe in Tiruvottiyur, Chennai. Coffee, momos, mojitos, pasta & more.",
+      `Premium cafe in ${BUSINESS.address.city}. Coffee, momos, mojitos, pasta & more.`,
     type: "website",
     locale: "en_IN",
   },
