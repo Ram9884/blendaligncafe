@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function DemoBanner() {
   const [isVisible, setIsVisible] = useState(true);
@@ -11,7 +11,7 @@ export default function DemoBanner() {
     const timer = setTimeout(() => {
       setIsExpanded(false);
     }, 4000);
-    
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -23,7 +23,7 @@ export default function DemoBanner() {
   if (!isVisible) return null;
 
   return (
-    <div 
+    <div
       className="fixed z-[100] transition-all duration-500 ease-out"
       style={{
         left: "1rem",
@@ -31,7 +31,7 @@ export default function DemoBanner() {
       }}
     >
       {isExpanded ? (
-        <div 
+        <div
           className="w-[320px] max-w-[calc(100vw-2rem)] p-4 rounded-2xl shadow-2xl border transition-all duration-300 transform scale-100"
           style={{
             background: "rgba(36, 21, 15, 0.94)",
